@@ -19,6 +19,8 @@ class HomeViewModel @Inject constructor(private val noteRepository: NoteReposito
         getAllNotes()
     }
 
+
+
     private fun getAllNotes() {
         viewModelScope.launch {
             noteRepository.getAllNotes().collect() {
