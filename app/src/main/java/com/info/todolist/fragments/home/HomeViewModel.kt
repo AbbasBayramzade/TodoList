@@ -1,5 +1,6 @@
 package com.info.todolist.fragments.home
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.info.todolist.repos.NoteRepository
@@ -13,27 +14,18 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(private val noteRepository: NoteRepository) : ViewModel() {
 
     //create a notes in list
-    var notes = listOf<Note>()
+    var notes = MutableLiveData<List<Note>>()
 
     init {
         getAllNotes()
     }
 
 
-
     private fun getAllNotes() {
         viewModelScope.launch {
             noteRepository.getAllNotes().collect() {
-                notes = it
+                notes.value = it
             }
         }
-//        val db: AppDatabase =
-//            Room.databaseBuilder(getApplication(), AppDatabase::class.java, "notes")
-//                .allowMainThreadQueries()
-//                .fallbackToDestructiveMigration()
-//                .build()
-
-        //get a notes
-//        notes = db.notedao().getAllNotes()
     }
 }

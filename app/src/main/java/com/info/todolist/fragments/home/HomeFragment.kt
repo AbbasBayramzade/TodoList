@@ -10,7 +10,9 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.info.todolist.R
 import com.info.todolist.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
@@ -27,8 +29,11 @@ class HomeFragment : Fragment() {
         //set adapter
 
         binding.apply {
-            recyclerview.layoutManager = LinearLayoutManager(context)
-            recyclerview.adapter = NoteAdapter(viewModel.notes, binding.root.context)
+
+            viewModel.notes.observe(viewLifecycleOwner) {
+                recyclerview.layoutManager = LinearLayoutManager(context)
+                recyclerview.adapter = NoteAdapter(it, binding.root.context)
+            }
 
             btnFab.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_addFragment)
