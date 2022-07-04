@@ -1,6 +1,5 @@
 package com.info.todolist.fragments.home
 
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -21,7 +20,8 @@ class HomeViewModel @Inject constructor(private val noteRepository: NoteReposito
         getAllNotes()
     }
 
-    fun getAllNotes() {
+
+    private fun getAllNotes() {
         viewModelScope.launch {
             noteRepository.getAllNotes().collect() {
                 notes.value = it

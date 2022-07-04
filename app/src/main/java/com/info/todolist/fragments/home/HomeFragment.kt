@@ -29,12 +29,14 @@ class HomeFragment : Fragment(), NoteAdapter.NoteItemClickListener {
 
         //set adapter
 
-        viewModel.notes.observe(viewLifecycleOwner){
-            binding.recyclerview.layoutManager = LinearLayoutManager(context)
-            binding.recyclerview.adapter = NoteAdapter(this, it)
-        }
+
 
         binding.apply {
+
+            viewModel.notes.observe(viewLifecycleOwner) {
+                recyclerview.layoutManager = LinearLayoutManager(context)
+                recyclerview.adapter = NoteAdapter(this@HomeFragment, it)
+            }
 
             btnFab.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_addFragment)
