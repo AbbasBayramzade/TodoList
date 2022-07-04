@@ -5,31 +5,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.info.todolist.room.AppDatabase
 import com.info.todolist.room.model.Note
 import com.info.todolist.R
 import com.info.todolist.databinding.FragmentAddBinding
+import com.info.todolist.fragments.details.NoteDetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddFragment : Fragment() {
 
     private lateinit var binding: FragmentAddBinding //? = null
 //    private val binding get() = _binding!!
 
+    private val viewModel: AddFragmentViewModel by viewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?, ): View? {
 
         binding = FragmentAddBinding.inflate(inflater,container,false)
+
+//        viewModel.noteAd
+
+//        viewModel.noteAd.observe(viewLifecycleOwner){
+//
+//
+//
+//        }
 
         val db: AppDatabase = Room.databaseBuilder(context!!, AppDatabase::class.java,"notes")
             .allowMainThreadQueries()
             .fallbackToDestructiveMigration()
             .build()
-        
-        binding.imgSave.setOnClickListener { 
+
+        binding.imgSave.setOnClickListener {
             if (binding.edttxtTitle.text.isEmpty() || binding.edttxtTyping.text.isEmpty()){
-                Toast.makeText(context, "bos biraxmaginen", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "boş buraxmaginən", Toast.LENGTH_SHORT).show()
             }else{
                 val note: Note = Note(binding.edttxtTitle.text.toString(),binding.edttxtTyping.text.toString())
                 db.notedao().insertAll(note)

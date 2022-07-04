@@ -13,15 +13,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        android:background="@drawable/gradient_backgroud_home">
 
         <LinearLayout
             android:id="@+id/setlong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/white"
-            android:layout_margin="10dp">
+            android:background="@drawable/gradient_backgroud_home">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,7 +37,9 @@
                     android:textSize="24sp"
                     android:layout_weight="0.7"
                     android:textStyle="bold"
-                    android:fontFamily="sans-serif-black" />
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 
@@ -52,7 +54,9 @@
                     android:layout_height="wrap_content"
                     android:text="description"
                     android:textSize="20sp"
-                    android:layout_weight="0.7"/>
+                    android:layout_weight="0.7"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"/>
 
             </LinearLayout>
 

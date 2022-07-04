@@ -5,4 +5,12 @@
     <string name="fragment_note_details">Fragment_Note_Details</string>
     <string name="fragment_settings">Fragment_Settings</string>
     <string name="to_do_list">To Do List</string>
+    <string name="settings">settings</string>
+    <string name="search">search</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="change_mode">Change mode</string>
+    <string name="note_details">Note Details</string>
+    <string name="note_details_">Note Details</string>
+    <string name="add_note">Add Note</string>
 </resources>

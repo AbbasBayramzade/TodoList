@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradient_back_details">
 
     <Toolbar
-        android:background="@color/teal_700"
+        android:id="@+id/tlbr"
+        android:background="@drawable/gradient_back_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,6 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note_details_"
+                app:layout_constraintStart_toEndOf="@id/back_img_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="60dp"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"/>
 
             <ImageView
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +65,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Test title"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
 
+            <EditText
+                android:id="@+id/et_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Test description"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
 
     </LinearLayout>
 
