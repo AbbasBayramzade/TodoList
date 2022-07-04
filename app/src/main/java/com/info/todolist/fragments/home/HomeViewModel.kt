@@ -16,12 +16,7 @@ class HomeViewModel @Inject constructor(private val noteRepository: NoteReposito
     //create a notes in list
     var notes = MutableLiveData<List<Note>>()
 
-    init {
-        getAllNotes()
-    }
-
-
-    private fun getAllNotes() {
+     fun getAllNotes() {
         viewModelScope.launch {
             noteRepository.getAllNotes().collect() {
                 notes.value = it
