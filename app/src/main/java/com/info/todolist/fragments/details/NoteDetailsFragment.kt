@@ -20,21 +20,26 @@ class NoteDetailsFragment : Fragment() {
     private lateinit var binding: FragmentNoteDetailsBinding
     private val safeArgs: NoteDetailsFragmentArgs by navArgs()
     private val viewModel: NoteDetailsViewModel by viewModels()
+    private var noteId: Int = 0
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?, ): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
 
 
-
-        binding = FragmentNoteDetailsBinding.inflate(inflater,container,false)
+        binding = FragmentNoteDetailsBinding.inflate(inflater, container, false)
 
         viewModel.getNote(noteId = safeArgs.id)
 
-        viewModel.note.observe(viewLifecycleOwner){
+        viewModel.note.observe(viewLifecycleOwner) {
 
             binding.apply {
 
-                 etTitle.setText(it.title)
-                 etDescription.setText(it.description)
+                etTitle.setText(it.title)
+                etDescription.setText(it.description)
+                noteId = it.noteId
 
             }
 
@@ -46,11 +51,11 @@ class NoteDetailsFragment : Fragment() {
             ad.setTitle("Bu notunuz silinəcək")
             ad.setMessage("Silinsinmi?")
             ad.setIcon(R.drawable.logo)
-            ad.setPositiveButton("Bəlİ"){View,dialogInterface ->
+            ad.setPositiveButton("Bəlİ") { View, dialogInterface ->
                 viewModel.deleteNote(noteId = safeArgs.id)
                 findNavController().popBackStack()
             }
-            ad.setNegativeButton("Xeyr"){View,dialogInterface ->
+            ad.setNegativeButton("Xeyr") { View, dialogInterface ->
                 findNavController().popBackStack()
             }
             ad.create().show()
@@ -58,14 +63,14 @@ class NoteDetailsFragment : Fragment() {
         }
 
         binding.imgEdit.setOnClickListener {
-//            val note = Note(binding.etTitle.text.toString(),binding.etDescription.text.toString())
-//            var a = binding.etTitle.text.toString()
-//            var b = binding.etTitle.text.toString()
-            var note = Note(title = binding.etTitle.setText("").toString(),binding.etDescription.setText("").toString())
+            val note = Note(binding.etTitle.text.toString(), binding.etDescription.text.toString())
+            note.noteId = noteId
             viewModel.editNote(note)
 
             findNavController().popBackStack()
         }
+
+
 
         Log.d("ABBAS =>", "NOTE idsi ${safeArgs.id}")
         binding.backImgBtn.setOnClickListener {
