@@ -4,22 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.home.HomeFragment">
+    tools:context=".fragments.home.HomeFragment"
+    android:background="@drawable/gradient_backgroud_home">
 
     <Toolbar
         android:id="@+id/tlbr_main"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="@string/to_do_list"
-        android:titleTextColor="@color/white"
-        android:subtitle="for portfolio"
-        android:subtitleTextColor="@color/white"
-        android:titleMarginStart="40dp"
+
         android:logo="@drawable/ic_note"
-        android:background="@drawable/gradient_back_tlbr"/>
+        android:background="@drawable/gradient_backgroud_home">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_do_list1"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginStart="40dp"
+            android:fontFamily="sans-serif-medium"/>
+
+    </Toolbar>
+
+    <androidx.appcompat.widget.SearchView
+        app:layout_constraintTop_toBottomOf="@id/tlbr_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_view"
+        app:queryHint="Search note"
+        android:background="#f1f1f1"
+        android:theme="@style/AppSearchView"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -28,19 +49,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlbr_main"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
         tools:listitem="@layout/note_item"
-        tools:itemCount="4" />
+        tools:itemCount="4"
+        android:background="@color/white"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
+        app:tint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="38dp"
-        android:background="@drawable/gradient_backgroud_home" />
+        android:backgroundTint="#435BE4"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -17,6 +16,7 @@ import com.info.todolist.R
 import com.info.todolist.databinding.FragmentAddBinding
 import com.info.todolist.fragments.details.NoteDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.internal.notify
 
 @AndroidEntryPoint
 class AddFragment : Fragment() {
@@ -30,25 +30,12 @@ class AddFragment : Fragment() {
 
         binding = FragmentAddBinding.inflate(inflater,container,false)
 
-//        viewModel.noteAd
-
-//        viewModel.noteAd.observe(viewLifecycleOwner){
-//
-//
-//
-//        }
-
-        val db: AppDatabase = Room.databaseBuilder(context!!, AppDatabase::class.java,"notes")
-            .allowMainThreadQueries()
-            .fallbackToDestructiveMigration()
-            .build()
-
         binding.imgSave.setOnClickListener {
             if (binding.edttxtTitle.text.isEmpty() || binding.edttxtTyping.text.isEmpty()){
                 Toast.makeText(context, "boş buraxmaginən", Toast.LENGTH_SHORT).show()
             }else{
                 val note: Note = Note(binding.edttxtTitle.text.toString(),binding.edttxtTyping.text.toString())
-                db.notedao().insertAll(note)
+                viewModel.addNote(note)
                 Navigation.findNavController(it).navigate((R.id.action_addFragment_to_homeFragment))
             }
         }

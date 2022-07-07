@@ -12,7 +12,8 @@
         android:background="@drawable/gradient_backgroud_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tlbr_add">
+        android:id="@+id/tlbr_add"
+        android:layout_marginTop="40dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -26,7 +27,8 @@
                 app:layout_constraintStart_toEndOf="@id/back_img_btn"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="90dp"
-                android:textSize="28sp"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:fontFamily="sans-serif-medium"/>
 
@@ -34,15 +36,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/back_img_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_back" />
 
             <ImageView
                 app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/img_save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_check"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="16dp"/>
@@ -55,7 +57,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/liner_add">
+        android:id="@+id/liner_add"
+        android:background="@color/white">
 
         <EditText
             android:id="@+id/edttxt_title"
@@ -63,10 +66,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:hint="title"
-            android:textSize="28sp"
+            android:textColorHint="#C3C1C1"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:layout_marginTop="35dp"/>
+            android:layout_marginTop="35dp"
+            android:background="@null"/>
 
         <EditText
             android:id="@+id/edttxt_typing"
@@ -74,9 +79,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:hint="start typing"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
+            android:textColorHint="#B3B3B3"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:background="@null"/>
 
     </LinearLayout>
 

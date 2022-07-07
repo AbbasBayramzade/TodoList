@@ -1,7 +1,13 @@
 package com.info.todolist.fragments.home
 
+import android.annotation.TargetApi
+import android.app.Activity
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -17,6 +23,7 @@ class HomeFragment : Fragment(), NoteAdapter.NoteItemClickListener {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
 
+    private var adapter = NoteAdapter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +42,8 @@ class HomeFragment : Fragment(), NoteAdapter.NoteItemClickListener {
 
             viewModel.notes.observe(viewLifecycleOwner) {
                 recyclerview.layoutManager = LinearLayoutManager(context)
-                recyclerview.adapter = NoteAdapter(this@HomeFragment, it)
+                adapter.setData(it)
+                recyclerview.adapter = adapter
             }
 
             btnFab.setOnClickListener {
@@ -44,7 +52,22 @@ class HomeFragment : Fragment(), NoteAdapter.NoteItemClickListener {
 
         }
 
+        binding.searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter.filter(newText)
+                return false
+            }
+        })
+
         return binding.root
+
+        //searchview
+
+
     }
 
     override fun onNoteItemClickListener(note: Note) {

@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/items"
@@ -13,15 +12,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="20dp"
-        android:background="@drawable/gradient_backgroud_home">
+        app:cardCornerRadius="12dp"
+        android:background="@drawable/gradient_backgroud_home"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp">
 
         <LinearLayout
             android:id="@+id/setlong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/gradient_backgroud_home">
+            android:background="#F1F1F1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,6 +38,7 @@
                     android:text="title"
                     android:textSize="24sp"
                     android:layout_weight="0.7"
+                    android:textColor="#605E5E"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif-black"
                     android:layout_marginStart="10dp"
@@ -53,10 +56,12 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="description"
+                    android:textColor="#4C4C4C"
                     android:textSize="20sp"
                     android:layout_weight="0.7"
                     android:layout_marginStart="10dp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"/>
 
             </LinearLayout>
 

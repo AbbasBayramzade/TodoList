@@ -47,7 +47,7 @@ class NoteDetailsFragment : Fragment() {
 
         binding.imgDelete.setOnClickListener {
 
-            val ad = AlertDialog.Builder(binding.root.context)
+            val ad = AlertDialog.Builder(binding.root.context,R.style.MyDialogTheme)
             ad.setTitle("Bu notunuz silinəcək")
             ad.setMessage("Silinsinmi?")
             ad.setIcon(R.drawable.logo)

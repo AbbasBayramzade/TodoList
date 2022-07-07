@@ -9,28 +9,28 @@
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always|collapseActionView"/>
 
-    <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/settings"
-        app:showAsAction="ifRoom">
+<!--    <item-->
+<!--        android:id="@+id/action_settings"-->
+<!--        android:icon="@drawable/ic_settings"-->
+<!--        android:title="@string/settings"-->
+<!--        app:showAsAction="ifRoom">-->
 
-        <menu>
+<!--        <menu>-->
 
-            <item
-                android:id="@+id/action_sign_in"
-                android:title="@string/sign_in"/>
+<!--            <item-->
+<!--                android:id="@+id/action_sign_in"-->
+<!--                android:title="@string/sign_in"/>-->
 
-            <item
-                android:id="@+id/action_sign_up"
-                android:title="@string/sign_up"/>
+<!--            <item-->
+<!--                android:id="@+id/action_sign_up"-->
+<!--                android:title="@string/sign_up"/>-->
 
-            <item
-                android:id="@+id/action_mode"
-                android:title="@string/change_mode"/>
+<!--            <item-->
+<!--                android:id="@+id/action_mode"-->
+<!--                android:title="@string/change_mode"/>-->
 
-        </menu>
+<!--        </menu>-->
 
-    </item>
+<!--    </item>-->
 
 </menu>
