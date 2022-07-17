@@ -20,9 +20,9 @@
 
     <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
 
-        <item name="android:textColorPrimary">#954C4C</item>
+        <item name="android:textColorPrimary">#000000</item>
         <!-- Hint Color -->
-        <item name="android:textColorHint">@color/teal_700</item>
+        <item name="android:textColorHint">#C3C1C1</item>
     </style>
 
     <style name="sdsd">

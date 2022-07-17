@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.navigation.Navigation
 import androidx.room.Room
 import com.info.todolist.R
-import com.info.todolist.databinding.FragmentAddBinding
 import com.info.todolist.repos.NoteRepository
 import com.info.todolist.room.AppDatabase
 import com.info.todolist.room.model.Note

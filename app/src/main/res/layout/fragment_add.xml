@@ -27,8 +27,7 @@
                 app:layout_constraintStart_toEndOf="@id/back_img_btn"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="90dp"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:textSize="22sp"
                 android:textColor="@color/white"
                 android:fontFamily="sans-serif-medium"/>
 
@@ -64,26 +63,26 @@
             android:id="@+id/edttxt_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="20dp"
             android:hint="title"
             android:textColorHint="#C3C1C1"
             android:textSize="24sp"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="35dp"
-            android:background="@null"/>
+            android:background="@null"
+            android:fontFamily="sans-serif-medium"/>
 
         <EditText
             android:id="@+id/edttxt_typing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="20dp"
             android:hint="start typing"
             android:textColorHint="#B3B3B3"
-            android:textSize="24sp"
-            android:textStyle="italic"
+            android:textSize="20sp"
             android:textColor="@color/black"
-            android:background="@null"/>
+            android:background="@null"
+            android:layout_marginTop="10dp"/>
 
     </LinearLayout>
 

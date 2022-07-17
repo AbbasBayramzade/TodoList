@@ -9,27 +9,53 @@
 
     <Toolbar
         android:id="@+id/tlbr_main"
+        android:layout_width="407dp"
+        android:layout_height="55dp"
         android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/gradient_backgroud_home"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        android:logo="@drawable/ic_note"
-        android:background="@drawable/gradient_backgroud_home">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_note"
+            android:layout_marginStart="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="sans-serif-medium"
             android:text="@string/to_do_list1"
-            android:textSize="24sp"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginStart="40dp"
-            android:fontFamily="sans-serif-medium"/>
+            android:textSize="22sp"/>
 
     </Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_view_const"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tlbr_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search_card"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="20dp">
 
     <androidx.appcompat.widget.SearchView
         app:layout_constraintTop_toBottomOf="@id/tlbr_main"
@@ -39,8 +65,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/search_view"
         app:queryHint="Search note"
-        android:background="#f1f1f1"
-        android:theme="@style/AppSearchView"/>
+        android:theme="@style/AppSearchView"
+        android:background="#EDEDED"
+        app:searchIcon="@drawable/ic_search_24" />
+
+    </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -49,10 +80,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:layout_constraintTop_toBottomOf="@+id/search_view_const"
         tools:listitem="@layout/note_item"
         tools:itemCount="4"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_fab"

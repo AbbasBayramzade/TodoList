@@ -27,8 +27,7 @@
                 app:layout_constraintStart_toEndOf="@id/back_img_btn"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="60dp"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:textSize="22sp"
                 android:textColor="@color/white"
                 android:fontFamily="sans-serif-medium"/>
 
@@ -74,18 +73,21 @@
                 android:layout_height="wrap_content"
                 android:hint="Test title"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:textSize="24sp"
-                android:textStyle="bold"/>
+                android:layout_marginTop="35dp"
+                android:textSize="22sp"
+                android:background="@null"
+                android:fontFamily="sans-serif-medium"/>
 
             <EditText
                 android:id="@+id/et_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Test description"
+                android:textColor="#858585"
                 android:layout_marginStart="20dp"
-                android:textSize="24sp"
-                android:textStyle="italic"/>
+                android:textSize="20sp"
+                android:background="@null"
+                android:layout_marginTop="10dp"/>
 
     </LinearLayout>
 

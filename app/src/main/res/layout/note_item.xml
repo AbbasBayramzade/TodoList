@@ -12,11 +12,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="12dp"
+        app:cardCornerRadius="15dp"
         android:background="@drawable/gradient_backgroud_home"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp">
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:id="@+id/setlong"
@@ -36,11 +34,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="title"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:layout_weight="0.7"
-                    android:textColor="#605E5E"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-black"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"/>
 
@@ -56,12 +53,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="description"
-                    android:textColor="#4C4C4C"
-                    android:textSize="20sp"
+                    android:textColor="#858585"
+                    android:textSize="17sp"
                     android:layout_weight="0.7"
                     android:layout_marginStart="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="italic"/>
+                    android:layout_marginBottom="10dp" />
 
             </LinearLayout>
 
