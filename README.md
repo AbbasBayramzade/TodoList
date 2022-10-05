@@ -19,3 +19,7 @@ App allows a user to add todo items, update or delete them. A user can also sear
 - [x] Coroutines are used in async communication.
 - [x] Hilt is used for dependency injection.
 - [x] Room DB is used for saving To Do items.
+
+#### Screenshots
+
+See app screenshots [here](https://github.com/AbbasBayramzade/TodoList/tree/master/screenshots)
