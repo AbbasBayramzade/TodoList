@@ -36,8 +36,6 @@ class HomeFragment : Fragment(), NoteAdapter.NoteItemClickListener {
 
         //set adapter
 
-
-
         binding.apply {
 
             viewModel.notes.observe(viewLifecycleOwner) {

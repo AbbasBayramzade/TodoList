@@ -58,6 +58,11 @@ class NoteDetailsFragment : Fragment() {
             ad.setNegativeButton("Xeyr") { View, dialogInterface ->
                 findNavController().popBackStack()
             }
+
+            ad.setNeutralButton("Cancel"){View,dialogInterface ->
+
+
+            }
             ad.create().show()
 
         }

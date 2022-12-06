@@ -21,7 +21,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_note"
-            android:layout_marginStart="20dp"/>
+            tools:ignore="ImageContrastCheck"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="12dp"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,11 +95,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:backgroundTint="#435BE4"
+        android:contentDescription="@string/todoo"
         android:src="@drawable/ic_add"
-        app:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="38dp"
-        android:backgroundTint="#435BE4"/>
+        app:tint="#FFFFFF"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
