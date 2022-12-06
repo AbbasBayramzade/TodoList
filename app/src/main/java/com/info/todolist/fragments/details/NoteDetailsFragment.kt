@@ -63,6 +63,8 @@ class NoteDetailsFragment : Fragment() {
 
 
             }
+
+            ad.setCancelable(false)
             ad.create().show()
 
         }
